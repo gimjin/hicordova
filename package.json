@@ -10,7 +10,8 @@
     "android": "cross-env NODE_ENV=production RUN_CORDOVA=true webpack --progress && cd cordova && cordova run android",
     "build": "cross-env NODE_ENV=production RUN_CORDOVA=true webpack --progress && cd cordova && cordova build android --release",
     "keystore": "keytool -genkey -v -keystore cordova/hicordova.keystore -alias hicordova -keyalg RSA -validity 20000",
-    "jarsigner": "jarsigner -verbose -keystore cordova/hicordova.keystore -signedjar cordova/platforms/android/app/build/outputs/apk/release/hicordova.apk cordova/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk hicordova"
+    "jarsigner": "jarsigner -verbose -keystore cordova/hicordova.keystore -signedjar cordova/platforms/android/app/build/outputs/apk/release/hicordova.apk cordova/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk hicordova",
+    "release": "standard-version"
   },
   "homepage": "https://github.com/kimseongrim/hicordova/blob/master/README.md",
   "repository": {
