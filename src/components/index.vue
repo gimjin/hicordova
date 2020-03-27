@@ -5,7 +5,7 @@
     </el-link>
     <router-view />
     <p>
-      <span class="cat">{{ name }}</span> is very beautiful.
+      <span class="cat">{{ getCatName }}</span> is very beautiful.
     </p>
     <img
       style="width: 2rem; height: 2rem;"
@@ -15,6 +15,26 @@
   </div>
 </template>
 
+<script>
+import { mapActions, mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters([
+      'getCatName'
+    ])
+  },
+  mounted () {
+    this.syncCat()
+  },
+  methods: {
+    ...mapActions([
+      'syncCat'
+    ])
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .cat {
   color: red;
@@ -22,5 +42,3 @@
   background: url("~@/assets/icon.png") center;
 }
 </style>
-
-<script src="./index.js"></script>

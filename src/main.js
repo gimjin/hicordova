@@ -10,9 +10,11 @@ import '@/base.css'
 Vue.use(ElementUI)
 Vue.config.productionTip = process.env.NODE_ENV !== 'production'
 
-/* eslint-disable-next-line */
-if (RUN_CORDOVA) {
+if (RUN_CORDOVA) { // eslint-disable-line
   document.addEventListener('deviceready', function () {
+    // overlay statusbar
+    StatusBar.overlaysWebView(true) // eslint-disable-line
+    StatusBar.styleLightContent() // eslint-disable-line
     new Vue({
       render: function (h) {
         return h(App)
