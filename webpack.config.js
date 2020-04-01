@@ -14,6 +14,9 @@ const RUN_CORDOVA = process.env.RUN_CORDOVA || false
 // Production
 const PROD_ENV = process.env.NODE_ENV === 'production'
 
+// Version
+const APP_VERSION = process.env.npm_package_version
+
 module.exports = {
   // Setting mode
   mode: PROD_ENV ? 'production' : 'development',
@@ -114,11 +117,14 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles/[contenthash].css'
     }),
-    // clean dist
-    new CleanWebpackPlugin(),
+    // clean www
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['**/*', '!.gitkeep']
+    }),
     // Plugin that simplifies creation of HTML files to serve your bundles
     new HtmlWebpackPlugin({
-      template: 'public/index.html'
+      template: 'public/index.html',
+      meta: { version: APP_VERSION }
     }),
     new CopyWebpackPlugin([{
       from: 'public',
