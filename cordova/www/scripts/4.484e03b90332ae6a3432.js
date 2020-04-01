@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{545:function(t,n,e){"use strict";e.r(n);var r=e(163),o=Object(r.a)({},(function(){var t=this.$createElement,n=this._self._c||t;return n("div",[n("router-link",{attrs:{to:"/"}},[this._v("\n    Go to parent.\n  ")])],1)}),[],!1,null,null,null);n.default=o.exports}}]);
