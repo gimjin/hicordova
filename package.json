@@ -68,7 +68,7 @@
     "stylelint": "^10.1.0",
     "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-scss": "^3.10.0",
-    "swiper": "^5.3.6",
+    "swiper": "^6.5.1",
     "terser-webpack-plugin": "^2.3.5",
     "url-loader": "^2.1.0",
     "vue": "^2.6.10",
